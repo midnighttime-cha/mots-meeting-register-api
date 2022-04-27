@@ -30,7 +30,7 @@ const fs = require("fs");
         entities: [
           "dist/**/entities/*.entity{.ts,.js}"
         ],
-        synchronize: true,
+        synchronize: process.env.SERVER_TYPE === 'LOCAL' ? true : false,
         logging: process.env.SERVER_TYPE === 'LOCAL' ? true : false,
         autoLoadEntities: true,
         keepConnectionAlive: true,
